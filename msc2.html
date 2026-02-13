@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasz Drugi Miesiąc &#128536;</title>
+    <link rel="shortcut icon" href="logo_strony.png" type="image/png">
+    
+    <style>
+        :root {
+            --primary-red: #ff4d6d;
+            --soft-pink: #fff0f3;
+            --dark-pink: #c9184a;
+            --text-color: #590d22;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--soft-pink);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(5px);
+        }
+
+        .nav-linki {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-linki a {
+            color: var(--dark-pink);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+            opacity: 0.7;
+            transition: 0.3s;
+        }
+
+        .nav-linki span { opacity: 0.3; color: var(--dark-pink); }
+        .nav-linki a:hover { opacity: 1; }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            color: var(--dark-pink);
+            margin-bottom: 10px;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 50px 0;
+        }
+
+        .photo-card {
+            background: white;
+            padding: 15px 15px 50px 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-radius: 3px;
+            transition: transform 0.3s ease;
+            max-width: 280px;
+        }
+
+        .photo-card:nth-child(1) { transform: rotate(-4deg); }
+        .photo-card:nth-child(2) { transform: rotate(3deg); }
+
+        .photo-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .photo-card p {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 1.5rem;
+            margin-top: 20px;
+            color: #444;
+        }
+
+        .book-quote-box {
+            background: #fff;
+            padding: 40px;
+            margin: 60px auto;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(89, 13, 34, 0.05);
+            max-width: 700px;
+            line-height: 1.8;
+        }
+
+        .book-quote-box::before {
+            content: "“";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 80px;
+            color: var(--primary-red);
+            opacity: 0.3;
+            font-family: serif;
+        }
+
+        .quote-text {
+            font-family: 'Georgia', serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #4a4a4a;
+        }
+
+        .quote-author {
+            margin-top: 20px;
+            display: block;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--dark-pink);
+            font-size: 0.9rem;
+        }
+
+        .heart-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+        .floating-heart {
+            position: absolute;
+            color: var(--primary-red);
+            animation: float 6s infinite linear;
+            opacity: 0;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(110vh) scale(0); opacity: 0; }
+            20% { opacity: 0.6; }
+            100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-linki">
+            <a href="index.html">Główna</a><span>|</span>
+            <a href="msc1.html">Miesiąc I</a><span>|</span>
+            <a href="msc2.html" style="font-weight: bold; opacity: 1;">Miesiąc II</a><span>|</span>
+            <a href="msc3.html">Miesiąc III</a><span>|</span>
+            <a href="msc4.html">Miesiąc IV</a><span>|</span>
+            <a href="msc5.html">Miesiąc V</a><span>|</span>
+            <a href="msc6.html">Miesiąc VI</a><span>|</span>
+            <a href="msc7.html">Miesiąc VII</a><span>|</span>
+            <a href="msc8.html">Miesiąc VIII</a><span>|</span>
+            <a href="msc9.html">Miesiąc IX</a>
+        </div>
+    </nav>
+
+    <div class="heart-bg" id="hearts-container"></div>
+
+    <div class="container">
+        <header>
+            <h1>Dwa miesiące razem ✨</h1>
+            <p>Każdy wspólny dzień jest piękniejszy od poprzedniego.</p>
+        </header>
+
+        <div class="gallery">
+            <div class="photo-card">
+                <img src="msc21.jfif" alt="My">
+                <p>Wspólny czas</p>
+            </div>
+            <div class="photo-card">
+                <img src="msc22.jfif" alt="My 2">
+                <p>Piekne widoki</p>
+            </div>
+        </div>
+
+        <div class="book-quote-box">
+            <div class="quote-text">
+                "Dla całego świata możesz być nikim, dla kogoś możesz być całym światem."
+            </div>
+            <span class="quote-author">— Antoine de Saint-Exupéry, "Mały Książę"</span>
+        </div>
+
+        <p style="margin-top: 40px; font-size: 1.1rem; opacity: 0.8;">
+            Dziękuję, że jesteś częścią mojej bajki. ❤️
+        </p>
+    </div>
+
+    <script>
+        function createHeart() {
+            const container = document.getElementById('hearts-container');
+            const heart = document.createElement('div');
+            heart.classList.add('floating-heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            container.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 6000);
+        }
+        setInterval(createHeart, 450);
+    </script>
+</body>
+</html>

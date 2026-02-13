@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasz Dziewiąty Miesiąc &#128536;</title>
+    <link rel="shortcut icon" href="logo_strony.png" type="image/png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .loader-container {
+            text-align: center;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loader-image {
+            width: 150px; 
+            height: auto;
+            display: block;
+            margin: 0 auto 15px;
+            border-radius: 8px;
+        }
+
+        .loader-text {
+            font-size: 1.2rem;
+            color: #555;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+
+        .back-button:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="loader-container">
+        <div class="spinner"></div>
+
+        <img src="pralka.jfif" alt="Obrazek ładowania" class="loader-image">
+
+        <div class="loader-text">Za niedługo będzie &#128536; ...</div>
+
+        <a href="index.html" class="back-button"><- Powrót</a>
+    </div>
+
+</body>
+</html>

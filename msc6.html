@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasz Szusty Miesiąc &#128536;</title>
+    <link rel="shortcut icon" href="logo_strony.png" type="image/png">
+    <style>
+        :root {
+            --primary-red: #ff4d6d;
+            --soft-pink: #fff0f3;
+            --dark-pink: #c9184a;
+            --text-color: #590d22;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--soft-pink);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 77, 109, 0.1);
+        }
+
+        .nav-linki {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-linki a {
+            color: var(--dark-pink);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+            opacity: 0.6;
+            transition: 0.3s;
+        }
+
+        .nav-linki span { 
+            opacity: 0.3; 
+            color: var(--dark-pink); 
+        }
+
+        .nav-linki a:hover { opacity: 1; }
+        .active { font-weight: bold; opacity: 1 !important; }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: var(--dark-pink);
+            margin-bottom: 50px;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 40px 0;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: var(--primary-red);
+            top: 0; bottom: 0; left: 50%;
+            margin-left: -1px;
+            opacity: 0.3;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 30px;
+        }
+
+        .left { left: 0; text-align: right; }
+        .right { left: 50%; text-align: left; }
+
+        .timeline-item img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .timeline-item img:hover { transform: scale(1.05); }
+
+        .fantasy-quote {
+            background: #fff;
+            padding: 40px;
+            margin: 80px auto;
+            border-radius: 4px;
+            border-left: 8px solid var(--dark-pink);
+            box-shadow: 10px 10px 30px rgba(0,0,0,0.05);
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .quote-text {
+            font-family: 'Garamond', serif;
+            font-size: 1.4rem;
+            line-height: 1.4;
+            color: #333;
+        }
+
+        .quote-author {
+            margin-top: 20px;
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--primary-red);
+            letter-spacing: 2px;
+        }
+
+        .heart-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+        .floating-heart {
+            position: absolute;
+            animation: float 5s infinite linear;
+            opacity: 0;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(105vh); opacity: 0; }
+            20% { opacity: 0.5; }
+            100% { transform: translateY(-10vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-linki">
+            <a href="index.html">Główna</a><span>|</span>
+            <a href="msc1.html">Miesiąc I</a><span>|</span>
+            <a href="msc2.html">Miesiąc II</a><span>|</span>
+            <a href="msc3.html">Miesiąc III</a><span>|</span>
+            <a href="msc4.html">Miesiąc IV</a><span>|</span>
+            <a href="msc5.html">Miesiąc V</a><span>|</span>
+            <a href="msc6.html" class="active">Miesiąc VI</a><span>|</span>
+            <a href="msc7.html">Miesiąc VII</a><span>|</span>
+            <a href="msc8.html">Miesiąc VIII</a><span>|</span>
+            <a href="msc9.html">Miesiąc IX</a>
+        </div>
+    </nav>
+
+    <div class="heart-bg" id="hearts-container"></div>
+
+    <div class="container">
+        <header>
+            <h1>Pół roku z Tobą ❤️</h1>
+            <p>6 miesięcy, 182 dni, tysiące wspomnień.</p>
+        </header>
+
+        <div class="timeline">
+            <div class="timeline-item left">
+                <img src="msc42.jfif" alt="Foto 1">
+                <p>Nasz 4. miesiąc</p>
+            </div>
+            <div class="timeline-item right">
+                <img src="msc51.jfif" alt="Foto 2">
+                <p>Nasz 5. miesiąc</p>
+            </div>
+            <div class="timeline-item left">
+                <img src="msc61.jfif" alt="Foto 3">
+                <p>Teraz - pół roku!</p>
+            </div>
+        </div>
+
+        <div class="fantasy-quote">
+            <div class="quote-text">
+                "Jestem Twoja, a Ty jesteś mój. Od tego dnia aż do ostatniego mojego dnia."
+            </div>
+            <span class="quote-author">— George R.R. Martin, "Nawałnica Mieczy"</span>
+        </div>
+
+        <p style="margin-bottom: 50px;">To dopiero połowa naszego pierwszego roku... ❤️</p>
+    </div>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('floating-heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            document.getElementById('hearts-container').appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 5000);
+        }
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>

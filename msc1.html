@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasz Pierwszy Miesiąc &#128536;</title>
+    <link rel="shortcut icon" href="logo_strony.png" type="image/png">
+    <style>
+        :root {
+            --primary-red: #ff4d6d;
+            --soft-pink: #fff0f3;
+            --dark-pink: #c9184a;
+            --text-color: #590d22;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--soft-pink);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 50px;
+            position: relative;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(5px);
+        }
+
+        .nav-linki {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-linki a {
+            color: var(--dark-pink);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .nav-linki span {
+            opacity: 0.5;
+            color: var(--dark-pink);
+        }
+
+        .nav-linki a:hover { 
+            opacity: 1; 
+            text-shadow: 0 0 5px rgba(255, 77, 109, 0.3);
+        }
+
+        .heart-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--dark-pink);
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .photo-card {
+            background: white;
+            padding: 12px;
+            border-radius: 5px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            transform: rotate(-1deg);
+            transition: all 0.3s ease;
+        }
+
+        .photo-card:nth-child(even) { transform: rotate(2deg); }
+        .photo-card:hover { transform: rotate(0deg) scale(1.03); }
+
+        .photo-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border: 1px solid #eee;
+        }
+
+        .photo-card p {
+            margin-top: 10px;
+            font-family: 'Brush Script MT', cursive, sans-serif;
+            font-size: 1.2rem;
+        }
+
+        .quotes-section {
+            background: rgba(255, 255, 255, 0.5);
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 40px;
+            border: 1px solid rgba(255, 77, 109, 0.2);
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .floating-heart {
+            position: absolute;
+            color: var(--primary-red);
+            opacity: 0.6;
+            animation: float 6s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            50% { opacity: 0.6; }
+            100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-linki">
+            <a href="index.html">Główna</a><span>|</span>
+            <a href="msc1.html" style="font-weight: bold; opacity: 1;">Miesiąc I</a><span>|</span>
+            <a href="msc2.html">Miesiąc II</a><span>|</span>
+            <a href="msc3.html">Miesiąc III</a><span>|</span>
+            <a href="msc4.html">Miesiąc IV</a><span>|</span>
+            <a href="msc5.html">Miesiąc V</a><span>|</span>
+            <a href="msc6.html">Miesiąc VI</a><span>|</span>
+            <a href="msc7.html">Miesiąc VII</a><span>|</span>
+            <a href="msc8.html">Miesiąc VIII</a><span>|</span>
+            <a href="msc9.html">Miesiąc IX</a>
+        </div>
+    </nav>
+
+    <div class="heart-bg" id="hearts-container"></div>
+
+    <div class="container">
+        <header>
+            <h1>Miesiąc Pierwszy ❤️</h1>
+            <p class="subtitle">Początek naszej miłości...</p>
+        </header>
+
+        <main>
+            <section class="gallery">
+                <div class="photo-card">
+                    <img src="msc11.jfif" alt="Spotkanie">
+                    <p>Nasz pierwszy przytulas</p>
+                </div>
+                <div class="photo-card">
+                    <img src="msc12.jfif" alt="Spacer">
+                    <p>Rozmowy do wieczorka</p>
+                </div>
+            </section>
+
+            <section class="quotes-section">
+                <div class="quote">
+                    "Wszystko zaczęło się od jednego munisia i uśmiechu..."
+                    <br>
+                    <strong>Dziękuję za ten pierwszy miesiąc!!!</strong>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('floating-heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            heart.style.fontSize = (Math.random() * 15 + 10) + 'px';
+            document.getElementById('hearts-container').appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 6000);
+        }
+        setInterval(createHeart, 500);
+    </script>
+
+</body>
+</html>

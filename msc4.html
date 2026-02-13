@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasz Czwarty Miesiąc &#128536;</title>
+    <link rel="shortcut icon" href="logo_strony.png" type="image/png">
+
+    <style>
+        :root {
+            --primary-red: #ff4d6d;
+            --soft-pink: #fff0f3;
+            --dark-pink: #c9184a;
+            --text-color: #590d22;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--soft-pink);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(255, 255, 255, 0.4);
+            border-bottom: 1px solid rgba(255, 77, 109, 0.1);
+        }
+
+        .nav-linki {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-linki a {
+            color: var(--dark-pink);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+            opacity: 0.6;
+            transition: 0.3s;
+        }
+
+        .nav-linki span { opacity: 0.3; color: var(--dark-pink); }
+        .nav-linki a:hover { opacity: 1; }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            color: var(--dark-pink);
+            margin-bottom: 10px;
+        }
+
+        .gallery-stack {
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .photo-card {
+            background: white;
+            padding: 10px 10px 45px 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-radius: 2px;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            width: 280px;
+            position: absolute;
+            cursor: pointer;
+        }
+
+        .card-1 { transform: rotate(-5deg) translateX(-20px); z-index: 3; }
+        .card-2 { transform: rotate(5deg) translateX(20px); z-index: 2; }
+        
+        .gallery-stack:hover .card-1 { transform: rotate(-12deg) translateX(-150px); }
+        .gallery-stack:hover .card-2 { transform: rotate(12deg) translateX(150px); }
+
+        .photo-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .photo-card p {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 1.5rem;
+            margin-top: 15px;
+            color: #444;
+        }
+
+        .quote-glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            margin: 60px auto;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            max-width: 700px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .quote-text {
+            font-family: 'Garamond', serif;
+            font-size: 1.4rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .quote-author {
+            margin-top: 20px;
+            display: block;
+            font-weight: bold;
+            color: var(--dark-pink);
+            letter-spacing: 1px;
+        }
+
+        .heart-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+        .floating-heart {
+            position: absolute;
+            color: var(--primary-red);
+            animation: float 8s infinite linear;
+            opacity: 0;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(110vh) scale(0.5); opacity: 0; }
+            30% { opacity: 0.4; }
+            100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-linki">
+            <a href="index.html">Główna</a><span>|</span>
+            <a href="msc1.html">Miesiąc I</a><span>|</span>
+            <a href="msc2.html">Miesiąc II</a><span>|</span>
+            <a href="msc3.html">Miesiąc III</a><span>|</span>
+            <a href="msc4.html" style="font-weight: bold; opacity: 1;">Miesiąc IV</a><span>|</span>
+            <a href="msc5.html">Miesiąc V</a><span>|</span>
+            <a href="msc6.html">Miesiąc VI</a><span>|</span>
+            <a href="msc7.html">Miesiąc VII</a><span>|</span>
+            <a href="msc8.html">Miesiąc VIII</a><span>|</span>
+            <a href="msc9.html">Miesiąc IX</a>
+        </div>
+    </nav>
+
+    <div class="heart-bg" id="hearts-container"></div>
+
+    <div class="container">
+        <header>
+            <h1>Czwarty Miesiąc ❤️</h1>
+            <p>Coraz bliżej myszko...</p>
+        </header>
+
+        <div class="gallery-stack">
+            <div class="photo-card card-1">
+                <img src="msc41.jfif" alt="My">
+                <p>Nasz świat</p>
+            </div>
+            <div class="photo-card card-2">
+                <img src="msc42.jfif" alt="My 2">
+                <p>Ty i Ja</p>
+            </div>
+        </div>
+
+        <div class="quote-glass">
+            <div class="quote-text">
+                "Najlepsza miłość to ta, która budzi duszę i sprawia, że chcemy więcej, która rozpala ogień w naszych sercach i przynosi spokój naszym umysłom."
+            </div>
+            <span class="quote-author">— Nicholas Sparks, "Pamiętnik"</span>
+        </div>
+
+        <p style="font-size: 0.9rem; opacity: 0.6; margin-top: 30px;">Już 4 miesiące piszemy naszą własną przyszłość.</p>
+    </div>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('floating-heart');
+            heart.innerHTML = '❣';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            heart.style.animationDuration = (Math.random() * 4 + 4) + 's';
+            document.getElementById('hearts-container').appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 8000);
+        }
+        setInterval(createHeart, 500);
+    </script>
+</body>
+</html>
