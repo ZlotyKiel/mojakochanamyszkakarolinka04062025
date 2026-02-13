@@ -73,10 +73,23 @@
         .back-button:active {
             transform: scale(0.95);
         }
+        .heart-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+        .floating-heart {
+            position: absolute;
+            color: var(--primary-red);
+            animation: float 7s infinite ease-in;
+            opacity: 0;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(110vh); opacity: 0; }
+            50% { opacity: 0.4; }
+            100% { transform: translateY(-10vh); opacity: 0; }
+        }
     </style>
 </head>
 <body>
-    
+    <div class="heart-bg" id="hearts-container"></div>
     <div class="loader-container">
         <div class="spinner"></div>
 
@@ -86,6 +99,18 @@
 
         <a href="index.html" class="back-button"><- Powrót</a>
     </div>
-
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('floating-heart');
+            heart.innerHTML = "\u{1F34C}";
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = (Math.random() * 15 + 10) + 'px';
+            heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            document.getElementById('hearts-container').appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 7000);
+        }
+        setInterval(createHeart, 600);
+    </script>
 </body>
 </html>
