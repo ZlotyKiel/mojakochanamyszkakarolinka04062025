@@ -3,114 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nasz Dziewiąty Miesiąc &#128536;</title>
+    <title>Nasz Dziewiąty Miesiąc 🌙</title>
     <link rel="shortcut icon" href="logo_strony.png" type="image/png">
+
     <style>
+        :root {
+            --primary-purple: #7209b7;
+            --soft-lavender: #f8f0fb;
+            --dark-magenta: #480ca8;
+            --text-color: #2b1d42;
+            --accent-gold: #f72585;
+        }
+
         body {
             margin: 0;
             padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--soft-lavender);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        nav {
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            background-color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px 50px;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(114, 9, 183, 0.1);
+            position: relative;
+            z-index: 10;
         }
 
-        .loader-container {
-            text-align: center;
+        .nav-linki {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 5px solid #f3f3f3;
-            border-top: 5px solid #3498db;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .loader-image {
-            width: 150px; 
-            height: auto;
-            display: block;
-            margin: 0 auto 15px;
-            border-radius: 8px;
-        }
-
-        .loader-text {
-            font-size: 1.2rem;
-            color: #555;
-            font-weight: 500;
-            letter-spacing: 1px;
-            margin-bottom: 25px;
-        }
-
-        .back-button {
-            display: inline-block;
-            padding: 10px 25px;
-            background-color: #3498db;
-            color: white;
+        .nav-linki a {
+            color: var(--dark-magenta);
             text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            border: none;
-            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+            opacity: 0.6;
+            transition: 0.3s;
         }
 
-        .back-button:hover {
-            background-color: #2980b9;
-            transform: scale(1.05);
+        .nav-linki span { opacity: 0.3; color: var(--dark-magenta); }
+        .nav-linki a:hover { opacity: 1; }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 2; 
         }
 
-        .back-button:active {
-            transform: scale(0.95);
+        header h1 {
+            font-size: 2.8rem;
+            color: var(--primary-purple);
+            margin-bottom: 10px;
         }
-        .heart-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
-        .floating-heart {
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+        }
+
+        .photo-frame {
+            background: white;
+            padding: 10px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(114, 9, 183, 0.1);
+            transition: transform 0.4s ease;
+        }
+
+        .photo-frame:hover { transform: translateY(-10px); }
+
+        .img-container {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .photo-frame:hover img { transform: scale(1.1); }
+
+        .classic-quote {
+            margin: 80px auto;
+            padding: 30px;
+            max-width: 650px;
+            border-top: 2px solid var(--accent-gold);
+            border-bottom: 2px solid var(--accent-gold);
+            position: relative;
+        }
+
+        .quote-text {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.5rem;
+            line-height: 1.5;
+            font-style: italic;
+            color: #444;
+        }
+
+        .star-bg { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            z-index: -1;
+            pointer-events: none; 
+        }
+
+        .floating-star {
             position: absolute;
-            color: var(--primary-red);
-            animation: float 7s infinite ease-in;
+            color: var(--accent-gold);
+            animation: float-stars 6s infinite ease-in;
             opacity: 0;
         }
 
-        @keyframes float {
-            0% { transform: translateY(110vh); opacity: 0; }
-            50% { opacity: 0.4; }
-            100% { transform: translateY(-10vh); opacity: 0; }
+        @keyframes float-stars {
+            0% { transform: translateY(110vh) rotate(0deg); opacity: 0; }
+            50% { opacity: 0.6; }
+            100% { transform: translateY(-10vh) rotate(180deg); opacity: 0; }
         }
     </style>
 </head>
 <body>
-    <div class="heart-bg" id="hearts-container"></div>
-    <div class="loader-container">
-        <div class="spinner"></div>
 
-        <img src="pralka.jfif" alt="Obrazek ładowania" class="loader-image">
+    <nav>
+        <div class="nav-linki">
+            <a href="index.html">Główna</a><span>|</span>
+            <a href="msc1.html">Miesiąc I</a><span>|</span>
+            <a href="msc2.html">Miesiąc II</a><span>|</span>
+            <a href="msc3.html">Miesiąc III</a><span>|</span>
+            <a href="msc4.html">Miesiąc IV</a><span>|</span>
+            <a href="msc5.html">Miesiąc V</a><span>|</span>
+            <a href="msc6.html">Miesiąc VI</a><span>|</span>
+            <a href="msc7.html">Miesiąc VII</a><span>|</span>
+            <a href="msc8.html">Miesiąc VIII</a><span>|</span>
+            <a href="msc9.html" style="font-weight: bold; opacity: 1;">Miesiąc IX</a><span>|</span>
+            <a href="msc10.html">Miesiąc X</a>
+        </div>
+    </nav>
 
-        <div class="loader-text">Za niedługo będzie &#128536; ...</div>
+    <div class="star-bg" id="stars-container"></div>
 
-        <a href="index.html" class="back-button"><- Powrót</a>
+    <div class="container">
+        <header>
+            <h1>Dziewiąty Miesiąc ⭐</h1>
+            <p>Kocham Cię calutkim sercem </p>
+        </header>
+
+        <div class="gallery-grid">
+            <div class="photo-frame">
+                <div class="img-container">
+                    <img src="msc91.jfif" alt="My 1">
+                </div>
+                <p>Nasze wspólne wieczory</p>
+            </div>
+            <div class="photo-frame">
+                <div class="img-container">
+                    <img src="msc92.jfif" alt="My 2">
+                </div>
+                <p>Każdy dzień to nowe wariactwo</p>
+            </div>
+        </div>
+
+        <div class="classic-quote">
+            <div class="quote-text">
+                "Kochać, to nie znaczy patrzeć na siebie nawzajem, ale patrzeć razem w tym samym kierunku."
+            </div>
+            <span class="quote-author">— Antoine de Saint-Exupéry</span>
+        </div>
+
+        <p style="margin-top: 20px; font-style: italic;">To już 9 miesięcy, jupiii!</p>
     </div>
+
     <script>
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('floating-heart');
-            heart.innerHTML = "\u{1F34C}";
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.fontSize = (Math.random() * 15 + 10) + 'px';
-            heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
-            document.getElementById('hearts-container').appendChild(heart);
-            setTimeout(() => { heart.remove(); }, 7000);
+        function createStar() {
+            const container = document.getElementById('stars-container');
+            const star = document.createElement('div');
+            star.classList.add('floating-star');
+            
+            const types = ['✨', '⭐', '🌟'];
+            star.innerHTML = types[Math.floor(Math.random() * types.length)];
+            
+            star.style.left = Math.random() * 100 + 'vw';
+            star.style.fontSize = (Math.random() * 15 + 15) + 'px';
+            star.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            
+            container.appendChild(star);
+            
+            setTimeout(() => { 
+                star.remove(); 
+            }, 6000);
         }
-        setInterval(createHeart, 600);
+        
+        setInterval(createStar, 600);
     </script>
 </body>
 </html>
