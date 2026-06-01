@@ -1,0 +1,77 @@
+:root {
+    --bg-color: #2e1a47;
+    --accent-pink: #f770be;
+    --accent-purple: #a18cd1;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(150, 50, 200, 0.3) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(200, 80, 150, 0.3) 0%, transparent 40%);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    width: 350px;
+}
+
+.character-placeholder {
+    margin-bottom: -40px;
+    position: relative;
+    z-index: 2;
+}
+
+.bear {
+    width: 200px;
+    filter: drop-shadow(0 0 15px rgba(247, 112, 190, 0.6));
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    padding: 40px 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    color: white;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.subtitle {
+    margin: 10px 0 30px 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.bonk-btn {
+    background: linear-gradient(90deg, var(--accent-purple) 0%, var(--accent-pink) 100%);
+    border: none;
+    border-radius: 20px;
+    padding: 10px 45px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bonk-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(247, 112, 190, 0.5);
+}

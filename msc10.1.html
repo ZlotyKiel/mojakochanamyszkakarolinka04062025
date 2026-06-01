@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasz Dziesiąty Miesiąc 🌸</title>
+    <link rel="shortcut icon" href="logo_strony.png" type="image/png">
+
+    <style>
+        :root {
+            --primary-rose: #d94e6c;
+            --soft-blush: #fdf6f6;
+            --dark-berry: #6b2d38;
+            --text-color: #3d262a;
+            --accent-gold: #e6b800;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--soft-blush);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(217, 78, 108, 0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        .nav-linki {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-linki a {
+            color: var(--dark-berry);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+            opacity: 0.6;
+            transition: 0.3s;
+        }
+
+        .nav-linki span { opacity: 0.3; color: var(--dark-berry); }
+        .nav-linki a:hover { opacity: 1; }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 2; 
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            color: var(--primary-rose);
+            margin-bottom: 10px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+        }
+
+        .photo-frame {
+            background: white;
+            padding: 10px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(217, 78, 108, 0.08);
+            transition: transform 0.4s ease;
+        }
+
+        .photo-frame:hover { transform: translateY(-10px); }
+
+        .img-container {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .photo-frame:hover img { transform: scale(1.1); }
+
+        .classic-quote {
+            margin: 80px auto;
+            padding: 30px;
+            max-width: 650px;
+            border-top: 2px solid var(--primary-rose);
+            border-bottom: 2px solid var(--primary-rose);
+            position: relative;
+        }
+
+        .quote-text {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.5rem;
+            line-height: 1.5;
+            font-style: italic;
+            color: #554044;
+        }
+
+        .quote-author {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: var(--dark-berry);
+        }
+
+        .star-bg { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            z-index: -1;
+            pointer-events: none; 
+        }
+
+        .floating-star {
+            position: absolute;
+            animation: float-stars 6s infinite ease-in;
+            opacity: 0;
+        }
+
+        @keyframes float-stars {
+            0% { transform: translateY(110vh) rotate(0deg); opacity: 0; }
+            50% { opacity: 0.7; }
+            100% { transform: translateY(-10vh) rotate(180deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-linki">
+            <a href="index.html">Główna</a><span>|</span>
+            <a href="msc1.html">Miesiąc I</a><span>|</span>
+            <a href="msc2.html">Miesiąc II</a><span>|</span>
+            <a href="msc3.html">Miesiąc III</a><span>|</span>
+            <a href="msc4.html">Miesiąc IV</a><span>|</span>
+            <a href="msc5.html">Miesiąc V</a><span>|</span>
+            <a href="msc6.html">Miesiąc VI</a><span>|</span>
+            <a href="msc7.html">Miesiąc VII</a><span>|</span>
+            <a href="msc8.html">Miesiąc VIII</a><span>|</span>
+            <a href="msc9.html">Miesiąc IX</a><span>|</span>
+            <a href="msc10.1.html" style="font-weight: bold; opacity: 1;">Miesiąc X</a><span>|</span>
+            <a href="msc11.html">Miesiąc XI</a><span>|</span>
+            <a href="msc12.html">Miesiąc XII</a><span>|</span>
+            <a href="msc10.html">Miesiąc XIII</a><span>|</span>
+        </div>
+    </nav>
+
+    <div class="star-bg" id="stars-container"></div>
+
+    <div class="container">
+        <header>
+            <h1>Dziesiąty Miesiąc 🌸</h1>
+            <p>Kocham Cię calusim serduszkiem</p>
+        </header>
+
+        <div class="gallery-grid">
+            <div class="photo-frame">
+                <div class="img-container">
+                    <img src="msc10.jfif" alt="My 1">
+                </div>
+                <p>Spanko Zzz</p>
+            </div>
+            <div class="photo-frame">
+                <div class="img-container">
+                    <img src="msc101.jfif" alt="My 2">
+                </div>
+                <p>Nocne jazdy</p>
+            </div>
+        </div>
+
+        <div class="classic-quote">
+            <div class="quote-text">
+                "Kochać to nie znaczy tylko brać, to znaczy przede wszystkim dawać, osłaniać i chronić to, co najdroższe."
+            </div>
+            <span class="quote-author">— Kahlil Gibran</span>
+        </div>
+
+        <p style="margin-top: 20px; font-style: italic;">To już 10 miesięcy, hiphiphuraaaa!</p>
+    </div>
+
+    <script>
+        function createStar() {
+            const container = document.getElementById('stars-container');
+            const star = document.createElement('div');
+            star.classList.add('floating-star');
+        
+            const types = ['🌸', '🌸', '🌸', '🌸'];
+            star.innerHTML = types[Math.floor(Math.random() * types.length)];
+            
+            star.style.left = Math.random() * 100 + 'vw';
+            star.style.fontSize = (Math.random() * 15 + 15) + 'px';
+            star.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            
+            container.appendChild(star);
+            
+            setTimeout(() => { 
+                star.remove(); 
+            }, 6000);
+        }
+        
+        setInterval(createStar, 600);
+    </script>
+</body>
+</html>
